@@ -286,20 +286,73 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Quick Links Section */}
+      <section style={{ maxWidth: '1100px', margin: '0 auto', padding: '3rem 1.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+          {[
+            { href: '/how-it-works', icon: '📖', label: 'How It Works', desc: 'See our 4-step process' },
+            { href: '/gallery', icon: '🖼️', label: 'Before & After Gallery', desc: 'Browse real transformations' },
+            { href: '/track-order', icon: '📦', label: 'Track Your Order', desc: 'Check order status live' },
+            { href: '/admin', icon: '⚙️', label: 'Admin Demo', desc: 'View studio dashboard' },
+          ].map(({ href, icon, label, desc }) => (
+            <a
+              key={href}
+              href={href}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                padding: '1rem 1.25rem',
+                background: '#FEFCF8',
+                border: '1px solid #EDE0C8',
+                borderRadius: '14px',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseOver={e => { (e.currentTarget as HTMLElement).style.borderColor = '#C9A84C'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'; }}
+              onMouseOut={e => { (e.currentTarget as HTMLElement).style.borderColor = '#EDE0C8'; (e.currentTarget as HTMLElement).style.transform = 'none'; }}
+            >
+              <span style={{ fontSize: '1.5rem', width: '36px', height: '36px', background: 'rgba(201,168,76,0.1)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{icon}</span>
+              <div>
+                <p style={{ margin: 0, fontSize: '0.875rem', fontWeight: '600', color: '#2C2420', fontFamily: '"DM Sans", sans-serif' }}>{label}</p>
+                <p style={{ margin: 0, fontSize: '0.75rem', color: '#9A8878', fontFamily: '"DM Sans", sans-serif' }}>{desc}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
       {/* Footer */}
       <footer
         style={{
           padding: '2rem 1.5rem',
           textAlign: 'center',
           borderTop: '1px solid #EDE0C8',
+          background: '#FEFCF8',
         }}
       >
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+          {[
+            { href: '/how-it-works', label: 'How It Works' },
+            { href: '/gallery', label: 'Gallery' },
+            { href: '/track-order', label: 'Track Order' },
+            { href: '/admin', label: 'Admin' },
+          ].map(({ href, label }) => (
+            <a key={href} href={href} style={{ fontSize: '0.82rem', color: '#9A8878', fontFamily: '"DM Sans", sans-serif', textDecoration: 'none', transition: 'color 0.2s' }}
+              onMouseOver={e => (e.currentTarget as HTMLElement).style.color = '#C9A84C'}
+              onMouseOut={e => (e.currentTarget as HTMLElement).style.color = '#9A8878'}
+            >
+              {label}
+            </a>
+          ))}
+        </div>
         <p
           style={{
             fontFamily: '"Playfair Display", Georgia, serif',
-            fontSize: '1rem',
+            fontSize: '0.95rem',
             color: '#9A8878',
             fontStyle: 'italic',
+            margin: 0,
           }}
         >
           ✦ Resin Artistry — Memories, Preserved Forever ✦

@@ -67,3 +67,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 2. **Customize** → Fill in details, upload photos, see live price
 3. **Review** → Verify all order details
 4. **Success** → Order confirmed with order number
+
+
+in admin panel client can add the dynamic qn to each product and budget setting and AI chat bot for speaking to client 

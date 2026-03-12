@@ -111,19 +111,49 @@ export default function Navbar({ step = 1 }: NavProps) {
           </div>
         )}
 
-        {/* Contact */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.4rem',
-            fontSize: '0.8rem',
-            color: '#9A8878',
-            fontFamily: '"DM Sans", sans-serif',
-          }}
-        >
-          <span>📲</span>
-          <span className="hidden sm:inline">WhatsApp Support</span>
+        {/* Nav links */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+          {[
+            { href: '/how-it-works', label: 'How It Works' },
+            { href: '/gallery', label: 'Gallery' },
+            { href: '/track-order', label: 'Track' },
+          ].map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              style={{
+                fontSize: '0.78rem',
+                color: '#7A6A62',
+                fontFamily: '"DM Sans", sans-serif',
+                fontWeight: '500',
+                textDecoration: 'none',
+                padding: '0.35rem 0.65rem',
+                borderRadius: '8px',
+                transition: 'color 0.2s',
+              }}
+            >
+              {label}
+            </Link>
+          ))}
+          <Link
+            href="/admin"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.3rem',
+              fontSize: '0.75rem',
+              color: '#C9A84C',
+              fontFamily: '"DM Sans", sans-serif',
+              fontWeight: '600',
+              textDecoration: 'none',
+              padding: '0.35rem 0.7rem',
+              background: 'rgba(201,168,76,0.08)',
+              border: '1px solid rgba(201,168,76,0.2)',
+              borderRadius: '8px',
+            }}
+          >
+            ⚙️
+          </Link>
         </div>
       </div>
     </nav>
