@@ -76,19 +76,18 @@ export default function GalleryPage() {
               key={cat}
               onClick={() => setActiveCategory(cat)}
               style={{
-                padding: '0.5rem 1.25rem',
-                borderRadius: '999px',
-                border: 'none',
-                cursor: 'pointer',
-                fontSize: '0.85rem',
-                fontFamily: '"DM Sans", sans-serif',
-                fontWeight: '600',
-                transition: 'all 0.2s ease',
-                background: activeCategory === cat ? '#2C2420' : '#FEFCF8',
-                color: activeCategory === cat ? '#E8C97A' : '#7A6A62',
-                boxShadow: activeCategory === cat ? '0 4px 12px rgba(44,36,32,0.15)' : 'none',
-                border: activeCategory === cat ? 'none' : '1px solid #EDE0C8',
-              } as React.CSSProperties}
+  padding: '0.5rem 1.25rem',
+  borderRadius: '999px',
+  cursor: 'pointer',
+  fontSize: '0.85rem',
+  fontFamily: '"DM Sans", sans-serif',
+  fontWeight: '600',
+  transition: 'all 0.2s ease',
+  background: activeCategory === cat ? '#2C2420' : '#FEFCF8',
+  color: activeCategory === cat ? '#E8C97A' : '#7A6A62',
+  boxShadow: activeCategory === cat ? '0 4px 12px rgba(44,36,32,0.15)' : 'none',
+  border: activeCategory === cat ? 'none' : '1px solid #EDE0C8',
+} as React.CSSProperties}
             >
               {cat}
             </button>
